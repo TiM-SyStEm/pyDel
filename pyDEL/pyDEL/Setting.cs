@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,40 +24,37 @@ namespace pyDEL
         public Setting()
         {
             InitializeComponent();
+            visibleFalse();
+        }
+        private void visibleFalse(){
             textBox1.Visible = false;
             textBox2.Visible = false;
             button3.Visible = false;
             label1.Visible = false;
             label2.Visible = false;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void visibleTrue(){
             textBox1.Visible = true;
             textBox2.Visible = true;
             button3.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            visibleTrue();
             textBox1.Text = ScaleMD;
             textBox2.Text = ScaleMSW;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Visible = false;
-            textBox2.Visible = false;
-            button3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
+            visibleFalse();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Visible = false;
-            textBox2.Visible = false;
-            button3.Visible = false;
-            label1.Visible = false;
-            label2.Visible = false;
+            visibleFalse();
             ScaleMapDoc = Convert.ToSingle(textBox1.Text);
             Form1 f1 = new Form1();
             f1.documentMap1.Scale = ScaleMapDoc;
